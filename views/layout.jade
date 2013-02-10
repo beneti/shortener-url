@@ -1,7 +1,19 @@
 doctype 5
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title shortener url
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    script(src='http://code.jquery.com/jquery-1.9.1.min.js', type="text/javascript")
   body
     block content
+
+  footer
+    hr
+    div(style="text-align: center")
+      a.btn(href="http://www.twitter.com/beneti", target="_blank")
+        div.icon-twitter
+          = "@beneti"
+      a.btn(href="http://www.twitter.com/beneti", target="_blank")
+        div.icon-github-alt
+          = " shortener"
