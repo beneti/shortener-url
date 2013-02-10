@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.row-fluid
+    div.span6(style='margin-left: 10px')
+      h1 shortener url
+
+      form.form-inline(method: 'post')
+        input.input-xlarge#url(type = 'text', name = 'url', size = '70')
+        input.btn.btn-info#shortenButton(type="button", value="Shorten", style="margin-left:5px")
+
+  div.row-fluid
+    div.span3.alert#result(style='margin-left: 10px; display: none')
+  script
+    $(document).ready(function(){
+      $("#shortenButton").click(function() {
+        url = $("#url").val().trim();
+        if(url.length > 0){
+          $.ajax({
+            type: "POST",
+            url: "/generate",
+            data: "url=" + url
+          }).done(function(data){
+            $("#result").empty().append(data);
+            $("#result").fadeIn("slow");
+          });
+        }
+      });
+    });
