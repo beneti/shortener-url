@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var Url = require('url');
-mongoose.connect('mongodb://localhost/shortener');
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/shortener';
+mongoose.connect(mongoUri);
 var schema = mongoose.Schema({ id: 'number', url: 'string' });
 var Shortener = mongoose.model('Shortener', schema);
 var alphabet, base;
@@ -34,7 +37,7 @@ function decode(s) {
 
 exports.generate = function(url, shortener){
   var parsed = Url.parse(url);
-  var correct_url = parsed.procol === undefined ? 'http://' + url: url;
+  var correct_url = parsed.protocol === undefined ? 'http://' + url: url;
 
   var id = parseInt(new Date().getTime()/1000);
   var short = encode(id);
