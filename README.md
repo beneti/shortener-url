@@ -1,6 +1,6 @@
 Implementation of shortener url using [bijective function](http://en.wikipedia.org/wiki/Bijection)
 
-##Install dependecies
+##Install dependencies
     npm install
     
 ##Enjoy
