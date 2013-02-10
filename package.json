@@ -1,0 +1,19 @@
+{
+  "name": "beneti.me-shortener",
+  "version": "0.0.1",
+  "author": "beneti <beneti@beneti.com.br>",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "jade": "0.28.x",
+    "coffee-script": "1.4.x",
+    "mongoose": "3.5.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm":  "1.1.x"
+  }
+}
