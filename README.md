@@ -7,4 +7,4 @@ Implementation of shortener url using [bijective function](http://en.wikipedia.o
     node app.js
     
 ##Demo
-    [beneti.me](http://beneti.me/)
+[beneti.me](http://beneti.me/)
